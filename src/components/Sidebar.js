@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { RiHome5Fill } from "react-icons/ri";
-import { HiGlobeAlt } from "react-icons/hi";
+import links from "../helpers/constants";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -15,19 +14,16 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="links-container">
-        <div className="link">
-          <span className="link-bar"></span>
-          <Link to="/">
-            <RiHome5Fill />
-          </Link>
-        </div>
-        {/* testing  */}
-        <div className="link">
-          <span className="link-bar"></span>
-          <Link to="/">
-            <HiGlobeAlt />
-          </Link>
-        </div>
+        {links.map((link) => {
+          return (
+            <div className="link-content" key={link.id}>
+              <span className="link-bar"></span>
+              <Link to={link.path} className="link">
+                {link.icon}
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </Wrapper>
   );
@@ -72,23 +68,27 @@ const Wrapper = styled.aside`
     width: 4px;
     display: inline-block;
     background: linear-gradient(167.76deg, #24e6f3 -1%, #5860e3 87.91%);
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   .links-container {
     width: 100%;
     margin-top: 100px;
     gap: 1rem;
   }
-  .link {
+  .link-content {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     height: 36px;
   }
-  .link-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .link {
+    color: #303241;
+  }
+  .link-active {
+    color: white;
   }
 `;
 
