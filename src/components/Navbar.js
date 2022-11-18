@@ -8,20 +8,21 @@ const Navbar = () => {
   };
   return (
     <Wrapper>
-      <form className="search-field" onSubmit={handleSubmit}>
-        <button className="search-icon">
+      <form className="search-field basic-container" onSubmit={handleSubmit}>
+        <button className="single-icon">
           <BsSearch />
         </button>
         <input type="text" placeholder="Search market" className="input" />
       </form>
       <div className="icons">
-        <div className="icon-container">
-          <BsHeart />
+        <div className="icon-container basic-container">
+          <BsHeart className="single-icon" />
         </div>
-        <div className="icon-container">
-          <BsBell />
+        <div className="icon-container basic-container">
+          <span className="dot"></span>
+          <BsBell className="single-icon" />
         </div>
-        <div className="icon-container">
+        <div className="icon-container basic-container">
           <p>Welcome user</p>
         </div>
       </div>
@@ -36,17 +37,16 @@ const Wrapper = styled.nav`
   .icons {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
   .search-field {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(180deg, #171822 0%, #171822 100%);
-    border: 1px solid #303241;
-    border-radius: 12px;
     width: 25vw;
     padding: 6px;
     max-width: 300px;
+    height: 50px;
   }
   .input {
     color: #a6a9b3;
@@ -59,10 +59,31 @@ const Wrapper = styled.nav`
     border-color: 3px solid blue;
     border: none;
   }
-  .search-icon {
+  .single-icon {
     color: #a6a9b3;
     background-color: transparent;
     border: none;
+  }
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    min-width: 50px;
+    position: relative;
+  }
+  .dot {
+    background: #ff646d;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 13px;
+    left: 25px;
+    border-radius: 50%;
+  }
+  p {
+    color: #666873;
+    padding: 0.5rem;
   }
 `;
 export default Navbar;

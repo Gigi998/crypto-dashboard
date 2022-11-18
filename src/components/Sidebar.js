@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import links from "../helpers/constants";
+import sidebarLinks from "../helpers/constants";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -14,7 +14,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="links-container">
-        {links.map((link) => {
+        {sidebarLinks.map((link) => {
           return (
             <div className="link-content" key={link.id}>
               <span className="link-bar"></span>

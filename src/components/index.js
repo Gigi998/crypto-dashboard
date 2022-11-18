@@ -3,4 +3,14 @@ import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import MainDashboard from "./MainDashboard";
 import SideDashboard from "./SideDashboard";
-export { Sidebar, Dashboard, Navbar, MainDashboard, SideDashboard };
+import Crypto from "./Crypto";
+import NFT from "./NFT";
+export {
+  Sidebar,
+  Dashboard,
+  Navbar,
+  MainDashboard,
+  SideDashboard,
+  Crypto,
+  NFT,
+};

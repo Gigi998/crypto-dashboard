@@ -27,3 +27,10 @@ body{
   justify-content: center;
   border: none;
 }
+
+.basic-container{
+  background: linear-gradient(180deg, #171822 0%, #171822 100%);
+  border-radius: 12px;
+  border: 1px solid #303241;
+  box-sizing: border-box;
+}

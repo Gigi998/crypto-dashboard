@@ -25,6 +25,7 @@ const Wrapper = styled.main`
     grid-template-columns: 70px auto;
     height: 90vh;
     max-height: 100%;
+    min-width: 320px;
   }
 `;
 

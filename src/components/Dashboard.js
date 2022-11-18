@@ -21,12 +21,18 @@ const Wrapper = styled.section`
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   height: 100%;
+  width: 100%;
   .content {
     max-height: inherit;
     height: 85vh;
     margin: 1rem 1rem 0 1rem;
     display: grid;
     grid-template-rows: 1fr 9fr;
+    min-width: 500px;
+  }
+  .dashboard {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
   }
 `;
 
