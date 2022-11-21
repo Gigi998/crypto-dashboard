@@ -20,7 +20,6 @@ const Wrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
-    width: 40em;
   }
 `;
 export default MainDashboard;

@@ -5,28 +5,21 @@ import styled from "styled-components";
 const Home = () => {
   return (
     <Wrapper>
-      <div className="main-container">
-        <Sidebar />
-        <Dashboard />
-      </div>
+      <Sidebar />
+      <Dashboard />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.main`
   background-color: #292a34;
-  margin: 2.5vh 5vw;
-  width: 90vw;
+  width: 95vw;
   height: 95vh;
   border-radius: 25px;
   border: 20px solid #292a34;
-  .main-container {
-    display: grid;
-    grid-template-columns: 70px auto;
-    height: 90vh;
-    max-height: 100%;
-    min-width: 320px;
-  }
+  display: grid;
+  grid-template-columns: 70px auto;
+  min-width: 300px;
 `;
 
 export default Home;

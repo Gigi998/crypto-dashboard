@@ -2,6 +2,8 @@
 ::after,
 ::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -17,6 +19,10 @@
 
 body{
   background-color: var(--main-bck);
+  padding: 2.5vh 2.5vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn{

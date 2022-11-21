@@ -34,6 +34,7 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 300px;
   .icons {
     display: flex;
     align-items: center;

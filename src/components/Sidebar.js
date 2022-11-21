@@ -36,11 +36,11 @@ const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 100%;
+  height: 100%;
   .logo-container {
     width: 100%;
     height: 36px;
-    margin-top: 1rem;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +74,7 @@ const Wrapper = styled.aside`
   }
   .links-container {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 15vh;
     gap: 1rem;
   }
   .link-content {
