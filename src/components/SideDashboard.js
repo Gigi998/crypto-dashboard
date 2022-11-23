@@ -6,7 +6,7 @@ const SideDashboard = () => {
 
 const Wrapper = styled.div`
   display: none;
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     display: block;
   }
 `;

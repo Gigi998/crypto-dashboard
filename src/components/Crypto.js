@@ -14,16 +14,17 @@ const Crypto = ({ title, price, url }) => {
 };
 
 const Wrapper = styled.div`
-  padding: 12px;
+  font-size: 0.7em;
+  padding: 1em;
+  width: 25%;
   .crypto-header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;
   }
   img {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 `;
 export default Crypto;

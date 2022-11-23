@@ -4,6 +4,10 @@ import bitcoin from "../assets/images/bitcoin.jpg";
 import BNB from "../assets/images/BNB.jpg";
 import ether from "../assets/images/ether.avif";
 import sushi from "../assets/images/sushi.jpeg";
+import boredApe from "../assets/images/boredApe.jpg";
+import cryptopunk from "../assets/images/cryptopunk.png";
+import meebit from "../assets/images/meebit.png";
+import worldOfWomen from "../assets/images/worldOfWomen.jpg";
 
 const sidebarLinks = [
   {
@@ -57,6 +61,33 @@ export const CryptoCurrenciesList = [
     title: "Sushi",
     price: 500,
     url: sushi,
+  },
+];
+
+export const NFTList = [
+  {
+    id: 1,
+    title: "Bored Ape",
+    price: 100,
+    url: boredApe,
+  },
+  {
+    id: 2,
+    title: "Meebit",
+    price: 200,
+    url: meebit,
+  },
+  {
+    id: 3,
+    title: "Crypto punk",
+    price: 202,
+    url: cryptopunk,
+  },
+  {
+    id: 4,
+    title: "World of WOmen",
+    price: 3404,
+    url: worldOfWomen,
   },
 ];
 

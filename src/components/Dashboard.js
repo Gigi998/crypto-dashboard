@@ -24,8 +24,14 @@ const Wrapper = styled.section`
   grid-template-rows: 50px auto;
   min-width: 300px;
   .dashboard {
+    width: 100%;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 66% 34%;
+  }
+  @media (max-width: 900px) {
+    .dashboard {
+      display: block;
+    }
   }
 `;
 
