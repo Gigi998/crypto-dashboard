@@ -4,7 +4,7 @@ import styled from "styled-components";
 const NFT = ({ title, url, price }) => {
   return (
     <Wrapper className="basic-container">
-      <img src={url} alt="image" />
+      <img src={url} alt={title} />
       <h3>{title}</h3>
       <div className="bottom-container">
         <p>

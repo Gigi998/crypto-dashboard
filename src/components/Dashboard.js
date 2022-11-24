@@ -27,6 +27,7 @@ const Wrapper = styled.section`
     width: 100%;
     display: grid;
     grid-template-columns: 66% 34%;
+    margin-top: 0.8rem;
   }
   @media (max-width: 900px) {
     .dashboard {

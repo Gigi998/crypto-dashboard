@@ -43,24 +43,28 @@ export const CryptoCurrenciesList = [
     title: "Bitcoin",
     price: 32000,
     url: bitcoin,
+    gain: 2.31,
   },
   {
     id: 2,
     title: "Etherium",
     price: 1000,
     url: ether,
+    gain: 4.51,
   },
   {
     id: 3,
     title: "BNB",
     price: 5000,
     url: BNB,
+    gain: -2.5,
   },
   {
     id: 4,
     title: "Sushi",
     price: 500,
     url: sushi,
+    gain: -3,
   },
 ];
 
