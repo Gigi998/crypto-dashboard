@@ -1,8 +1,9 @@
 import React from "react";
-import { Crypto, NFT } from "./";
+import { Crypto, NFT, Transaction } from "./";
 import styled from "styled-components";
 import { CryptoCurrenciesList } from "../helpers/constants";
 import { NFTList } from "../helpers/constants";
+import { TransactionsList } from "../helpers/constants";
 import { MdArrowForwardIos } from "react-icons/md";
 
 const MainDashboard = () => {
@@ -26,13 +27,28 @@ const MainDashboard = () => {
         })}
       </div>
       <div className="heading-content">
-        <h2>Biggest transaction of the month</h2>
+        <h2>Biggest transactions of the month</h2>
         <div className="heading-icon">
           <p>See all</p>
           <MdArrowForwardIos />
         </div>
       </div>
-      <div className="transaction-container"></div>
+      <div className="transaction-section">
+        <div className="transaction-header">
+          <p>From</p>
+          <p>To</p>
+          <p>Currency</p>
+          <p>Price</p>
+          <p>Amount</p>
+          <p>Buy/Sell</p>
+          <p>Date</p>
+        </div>
+        <div className="transaction-container">
+          {TransactionsList.map((trans) => {
+            return <Transaction key={trans.id} {...trans} />;
+          })}
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -40,11 +56,13 @@ const MainDashboard = () => {
 const Wrapper = styled.section`
   width: 100%;
   height: auto;
+  display: grid;
+  grid-template-rows: 12% 10% 34% 10% 34%;
   .crypto-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 0.5em;
   }
   h2 {
     font-size: 1.5rem;
@@ -63,6 +81,10 @@ const Wrapper = styled.section`
   }
   .heading-icon {
     display: flex;
+  }
+  .transaction-header {
+    display: flex;
+    justify-content: space-around;
   }
 `;
 export default MainDashboard;

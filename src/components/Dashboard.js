@@ -29,9 +29,11 @@ const Wrapper = styled.section`
     grid-template-columns: 66% 34%;
     margin-top: 0.8rem;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1150px) {
     .dashboard {
-      display: block;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
     }
   }
 `;

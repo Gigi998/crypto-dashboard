@@ -4,9 +4,9 @@ const SideDashboard = () => {
   return <Wrapper>SideDashboard</Wrapper>;
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: none;
-  @media (min-width: 900px) {
+  @media (min-width: 1150px) {
     display: block;
   }
 `;

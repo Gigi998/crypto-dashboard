@@ -5,6 +5,7 @@ import MainDashboard from "./MainDashboard";
 import SideDashboard from "./SideDashboard";
 import Crypto from "./Crypto";
 import NFT from "./NFT";
+import Transaction from "./Transaction";
 export {
   Sidebar,
   Dashboard,
@@ -13,4 +14,5 @@ export {
   SideDashboard,
   Crypto,
   NFT,
+  Transaction,
 };

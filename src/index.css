@@ -28,12 +28,13 @@ body{
 }
 
 .btn{
-  background-color: var(--btn-color);
-  border-radius: var(--border-radius-low);
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
+  background: linear-gradient(108.49deg, #AF53FF 0%, #6EACFE 95.17%);
+  border-radius: 8px;
+  color: #fff;
 }
 
 .basic-container{
