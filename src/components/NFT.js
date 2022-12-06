@@ -4,82 +4,48 @@ import styled from "styled-components";
 const NFT = ({ title, url, price, owner, ownerImg }) => {
   return (
     <Wrapper className="basic-container">
-      <div className="nft-top">
-        <img src={url} alt={title} className="nftImg" />
-        <h4 className="owner">{owner}</h4>
-        <img src={ownerImg} alt="img" className="ownerImg" />
-      </div>
-      <div className="nft-bottom">
-        <h3 className="nft-title">{title}</h3>
-        <div className="bottom-container">
-          <div className="price">
-            Current Bid
-            <br />
-            {price}
-          </div>
-          <button className="btn btn-bidded">Bidded</button>
+      <img src={url} alt={title} className="nftImg" />
+      <h4 className="owner">{owner}</h4>
+      {/* <img src={ownerImg} alt="img" className="ownerImg" /> */}
+
+      <h3 className="nft-title">{title}</h3>
+      <div className="bottom-container">
+        <div className="price">
+          Current Bid
+          <br />
+          {price}
         </div>
+        <button className="btn btn-bidded">Bidded</button>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  flex: 0 0 24%;
+  padding: 1rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
-  width: 25%;
-  .nft-top {
-    margin-top: 0.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
+  justify-content: space-between;
+  color: #fff;
   .nftImg {
-    width: 95%;
-    height: 10rem;
+    width: 100%;
+    height: 50%;
     border-radius: 12px;
-    margin-bottom: 0.5em;
   }
-  .ownerImg {
-    width: 2em;
-    height: 2em;
-    border-radius: 100%;
-    position: absolute;
-    top: 9em;
-    left: 8em;
-  }
-  .owner {
-    margin-left: -8.5em;
-    color: #43465c;
-    font-size: small;
-    font-weight: 100;
-  }
-  .nft-bottom {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5em;
-  }
-  .nft-title {
-    font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 0.5em;
+  img {
+    width: 3rem;
+    height: 3rem;
   }
   .bottom-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   .price {
-    font-weight: 200;
-    font-size: 0.8rem;
+    margin-right: auto;
   }
   .btn-bidded {
-    height: 2em;
-    width: 5em;
+    width: 6rem;
   }
 `;
 

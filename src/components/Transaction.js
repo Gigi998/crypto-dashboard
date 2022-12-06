@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Transaction = ({ id, from, to, currency, price, date, buy, amount }) => {
   return (
     <Wrapper className="basic-container">
-      <p>{id}</p>
+      {/* <p>{id}</p> */}
       <p>{from}</p>
       <p>{to}</p>
       <p>{currency}</p>
@@ -16,10 +16,13 @@ const Transaction = ({ id, from, to, currency, price, date, buy, amount }) => {
 };
 
 const Wrapper = styled.div`
-  font-size: 0.8rem;
   display: flex;
-  justify-content: center;
-  gap: 0.4rem;
+  justify-content: space-around;
+  align-items: center;
+  p {
+    width: 3rem;
+    color: #fff;
+  }
 `;
 
 export default Transaction;

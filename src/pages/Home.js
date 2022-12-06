@@ -13,13 +13,12 @@ const Home = () => {
 
 const Wrapper = styled.main`
   background-color: #292a34;
-  width: 95vw;
-  height: 95vh;
+  max-width: 140rem;
   border-radius: 25px;
   border: 20px solid #292a34;
-  display: grid;
-  grid-template-columns: 70px auto;
-  min-width: 300px;
+  min-height: 50rem;
+  margin: 5rem auto;
+  display: flex;
 `;
 
 export default Home;

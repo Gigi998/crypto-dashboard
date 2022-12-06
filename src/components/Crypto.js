@@ -15,22 +15,22 @@ const Crypto = ({ title, price, url, gain }) => {
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 0.8em;
-  padding: 1em;
-  width: 25%;
+  flex: 0 0 24%;
+  padding: 1rem;
   .crypto-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.4em;
+    color: #fff;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   img {
-    width: 1.5em;
-    height: 1.5em;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 100px;
+  }
+  p {
+    color: #fff;
   }
 `;
 export default Crypto;

@@ -9,45 +9,38 @@ const Navbar = () => {
   return (
     <Wrapper>
       <form className="search-field basic-container" onSubmit={handleSubmit}>
-        <button className="single-icon">
+        <button className="single-icon search">
           <BsSearch />
         </button>
         <input type="text" placeholder="Search market" className="input" />
       </form>
-      <div className="icons">
-        <div className="icon-container basic-container">
-          <BsHeart className="single-icon" />
-        </div>
-        <div className="icon-container basic-container">
-          <span className="dot"></span>
-          <BsBell className="single-icon" />
-        </div>
-        <div className="icon-container basic-container">
-          <p>Welcome user</p>
-        </div>
+      <div className="icon-container basic-container">
+        <BsHeart className="single-icon" />
+      </div>
+      <div className="icon-container basic-container">
+        <span className="dot"></span>
+        <BsBell className="single-icon" />
+      </div>
+      <div className="icon-container basic-container">
+        <p>Welcome user</p>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.nav`
+  margin: 0 2rem;
+  height: 10rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  min-width: 300px;
-  .icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
   .search-field {
+    margin-right: auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 25vw;
-    padding: 6px;
-    max-width: 300px;
-    height: 50px;
+    flex: 0 0 30%;
+    padding: 0.6rem;
+    height: 5rem;
   }
   .input {
     color: #a6a9b3;
@@ -55,31 +48,38 @@ const Wrapper = styled.nav`
     border-color: transparent;
     background-color: transparent;
     width: 100%;
+    margin-left: 0.5rem;
   }
   .input:focus {
-    border-color: 3px solid blue;
-    border: none;
+    outline: none;
   }
   .single-icon {
     color: #a6a9b3;
     background-color: transparent;
     border: none;
+    font-size: 1.7rem;
+  }
+  .search {
+    margin-left: 1rem;
   }
   .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    min-width: 50px;
+    height: 5rem;
+    min-width: 5rem;
     position: relative;
+  }
+  .icon-container:not(:last-child) {
+    margin-right: 1.5rem;
   }
   .dot {
     background: #ff646d;
     position: absolute;
-    width: 6px;
-    height: 6px;
-    top: 13px;
-    left: 25px;
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 1.3rem;
+    left: 2.5rem;
     border-radius: 50%;
   }
   p {

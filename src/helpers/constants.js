@@ -12,27 +12,27 @@ import worldOfWomen from "../assets/images/worldOfWomen.jpg";
 const sidebarLinks = [
   {
     id: 1,
-    icon: <RiHome5Fill />,
+    icon: <RiHome5Fill fontSize="2rem" />,
     path: "/",
   },
   {
     id: 2,
-    icon: <BiBorderAll />,
+    icon: <BiBorderAll fontSize="2rem" />,
     path: "/error",
   },
   {
     id: 3,
-    icon: <BiBorderAll />,
+    icon: <BiBorderAll fontSize="2rem" />,
     path: "/error",
   },
   {
     id: 4,
-    icon: <BiBorderAll />,
+    icon: <BiBorderAll fontSize="2rem" />,
     path: "/error",
   },
   {
     id: 5,
-    icon: <BiBorderAll />,
+    icon: <BiBorderAll fontSize="2rem" />,
     path: "/error",
   },
 ];
