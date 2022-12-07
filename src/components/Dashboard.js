@@ -4,17 +4,12 @@ import styled from "styled-components";
 
 const Dashboard = () => {
   return (
-    // <Wrapper>
-    //   <Navbar />
-    //   <div className="dashboard">
-    //     <MainDashboard />
-    //     <SideDashboard />
-    //   </div>
-    // </Wrapper>
     <Wrapper>
       <Navbar />
-      <MainDashboard />
-      {/* <SideDashboard /> */}
+      <div className="dashboard">
+        <MainDashboard />
+        <SideDashboard />
+      </div>
     </Wrapper>
   );
 };
@@ -26,15 +21,8 @@ const Wrapper = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* padding: 15px; */
-  /* display: grid;
-  grid-template-rows: 50px auto;
-  min-width: 300px; */
   .dashboard {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 66% 34%;
-    margin-top: 0.8rem;
+    display: flex;
   }
 `;
 

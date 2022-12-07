@@ -6,6 +6,9 @@ import SideDashboard from "./SideDashboard";
 import Crypto from "./Crypto";
 import NFT from "./NFT";
 import Transaction from "./Transaction";
+import Exchange from "./Exchange";
+import TransRatio from "./TransRatio";
+import InOut from "./InOut";
 export {
   Sidebar,
   Dashboard,
@@ -15,4 +18,7 @@ export {
   Crypto,
   NFT,
   Transaction,
+  Exchange,
+  TransRatio,
+  InOut,
 };

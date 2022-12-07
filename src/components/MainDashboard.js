@@ -8,48 +8,6 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 const MainDashboard = () => {
   return (
-    // <Wrapper>
-    //   <div className="crypto-container">
-    //     {CryptoCurrenciesList.map((item) => {
-    //       return <Crypto key={item.id} {...item} />;
-    //     })}
-    //   </div>
-    //   <div className="heading-content">
-    //     <h2>Top NFT this month</h2>
-    //     <div className="heading-icon">
-    //       <p>See all</p>
-    //       <MdArrowForwardIos />
-    //     </div>
-    //   </div>
-    //   <div className="NFT-container">
-    //     {NFTList.map((item) => {
-    //       return <NFT key={item.id} {...item} />;
-    //     })}
-    //   </div>
-    //   <div className="heading-content">
-    //     <h2>Biggest transactions of the month</h2>
-    //     <div className="heading-icon">
-    //       <p>See all</p>
-    //       <MdArrowForwardIos />
-    //     </div>
-    //   </div>
-    // <div className="transaction-section">
-    //   <div className="transaction-header">
-    //     <p>From</p>
-    //     <p>To</p>
-    //     <p>Currency</p>
-    //     <p>Price</p>
-    //     <p>Amount</p>
-    //     <p>Buy/Sell</p>
-    //     <p>Date</p>
-    //   </div>
-    //   <div className="transaction-container">
-    //     {TransactionsList.map((trans) => {
-    //       return <Transaction key={trans.id} {...trans} />;
-    //     })}
-    //   </div>
-    // </div>
-    // </Wrapper>
     <Wrapper>
       <div className="crypto-container">
         {CryptoCurrenciesList.map((item) => {
@@ -77,12 +35,13 @@ const MainDashboard = () => {
       </div>
       <div className="transaction-section">
         <div className="transaction-header">
+          <p></p>
           <p>From</p>
           <p>To</p>
           <p>Currency</p>
-          <p>Price</p>
-          <p>Amount</p>
-          <p>Buy/Sell</p>
+          <p className="transaction-price">Price</p>
+          <p className="transaction-amount">Amount</p>
+          <p className="transaction-buy">Buy/Sell</p>
           <p>Date</p>
         </div>
         {TransactionsList.map((trans) => {
@@ -128,13 +87,33 @@ const Wrapper = styled.section`
   }
   .transaction-section {
     flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   .transaction-header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color: #fff;
-    p {
-      width: 3rem;
+    * {
+      width: 7.5rem;
+      margin-left: 1rem;
+      font-size: 1.1rem;
+      color: #666873;
+      :nth-child(1) {
+        width: 1rem;
+      }
+    }
+    .transaction-price {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .transaction-amount {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .transaction-buy {
+      display: flex;
+      justify-content: center;
     }
   }
 `;
