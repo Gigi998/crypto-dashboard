@@ -17,7 +17,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   flex: 0 0 20%;
   margin-right: 2rem;
-  * {
+  & > * {
     padding: 1rem;
     :not(:last-child) {
       margin-bottom: 1rem;

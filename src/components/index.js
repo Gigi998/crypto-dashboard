@@ -9,6 +9,7 @@ import Transaction from "./Transaction";
 import Exchange from "./Exchange";
 import TransRatio from "./TransRatio";
 import InOut from "./InOut";
+import ExchangeSelect from "./ExchangeSelect";
 export {
   Sidebar,
   Dashboard,
@@ -21,4 +22,5 @@ export {
   Exchange,
   TransRatio,
   InOut,
+  ExchangeSelect,
 };
