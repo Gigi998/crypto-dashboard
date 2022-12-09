@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ExchangeSelect } from "./";
 import { CryptoCurrenciesList } from "../helpers/constants";
+import Select from "react-select";
+import bitcoin from "../assets/images/bitcoin.jpg";
 
 const Exchange = () => {
   return (
@@ -22,6 +24,7 @@ const Exchange = () => {
           20000 <span className="currency">USD</span>
         </p>
       </div>
+
       <ExchangeSelect getpay="get" crypto={CryptoCurrenciesList} />
       <ExchangeSelect getpay="pay" crypto={CryptoCurrenciesList} />
       <button className="btn btn-exchange">Exchange</button>

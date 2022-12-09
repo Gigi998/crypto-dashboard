@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   .get-heading {
     color: #43465c;
     text-transform: capitalize;
+    font-weight: 500;
   }
   .exchange-search {
     display: flex;

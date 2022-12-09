@@ -41,6 +41,7 @@ export const CryptoCurrenciesList = [
   {
     id: 1,
     title: "Bitcoin",
+    value: "bitcoin",
     price: 32000,
     url: bitcoin,
     gain: 2.31,
@@ -48,6 +49,7 @@ export const CryptoCurrenciesList = [
   {
     id: 2,
     title: "Etherium",
+    value: "etherium",
     price: 1000,
     url: ether,
     gain: 4.51,
@@ -55,6 +57,7 @@ export const CryptoCurrenciesList = [
   {
     id: 3,
     title: "BNB",
+    value: "bnb",
     price: 5000,
     url: BNB,
     gain: -2.5,
@@ -62,6 +65,7 @@ export const CryptoCurrenciesList = [
   {
     id: 4,
     title: "Sushi",
+    value: "sushi",
     price: 500,
     url: sushi,
     gain: -3,
