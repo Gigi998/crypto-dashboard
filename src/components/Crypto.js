@@ -1,15 +1,26 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { Loading } from "./";
 
-const Crypto = ({ title, price, url, gain }) => {
+const Crypto = ({ rank, symbol, name, id, priceUsd }) => {
+  const { isLoading } = useSelector((store) => store.allCrypto);
+
+  if (isLoading) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <Wrapper className="basic-container">
       <div className="crypto-header">
-        <img src={url} alt={title} />
-        <h4>{title}</h4>
+        <h4>{name}</h4>
         <p>(24h)</p>
       </div>
-      <p>${price}</p>
+      <p>${parseInt(priceUsd, 10)}</p>
     </Wrapper>
   );
 };

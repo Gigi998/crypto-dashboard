@@ -26,7 +26,7 @@ const InOut = () => {
 };
 
 const Wrapper = styled.div`
-  flex: 0 0 42%;
+  flex: 1;
   color: #fff;
   display: flex;
   flex-direction: column;

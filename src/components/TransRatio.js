@@ -15,7 +15,7 @@ const TransRatio = () => {
 };
 
 const Wrapper = styled.div`
-  flex: 1;
+  flex: 0 0 20%;
   display: flex;
   align-items: center;
   justify-content: flex-start;

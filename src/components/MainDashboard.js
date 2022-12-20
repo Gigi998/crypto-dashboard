@@ -1,18 +1,37 @@
-import React from "react";
-import { Crypto, NFT, Transaction } from "./";
+import React, { useEffect } from "react";
+import { Crypto, NFT, Transaction, Loading } from "./";
 import styled from "styled-components";
-import { CryptoCurrenciesList } from "../helpers/constants";
-import { NFTList } from "../helpers/constants";
 import { TransactionsList } from "../helpers/constants";
 import { MdArrowForwardIos } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { getCryptoCurrencies } from "../features/allCrypto/allCryptoSlice";
+import { getNFT } from "../features/allNFTs/allNFTslice";
+import { NFTList } from "../helpers/constants";
+import { Link } from "react-router-dom";
 
 const MainDashboard = () => {
+  const dispatch = useDispatch();
+  const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
+  const { nftList } = useSelector((store) => store.allNFT);
+  // Fetching currencies
+  useEffect(() => {
+    dispatch(getCryptoCurrencies());
+  }, []);
+  // // Fetching nfts
+  // useEffect(() => {
+  //   dispatch(getNFT());
+  // }, []);
+
   return (
     <Wrapper>
       <div className="crypto-container">
-        {CryptoCurrenciesList.map((item) => {
-          return <Crypto key={item.id} {...item} />;
-        })}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          currenciesList.slice(0, 4).map((item) => {
+            return <Crypto key={item.rank} {...item} />;
+          })
+        )}
       </div>
       <div className="heading-content">
         <h2 className="heading-title">Top NFT this month</h2>
@@ -28,10 +47,10 @@ const MainDashboard = () => {
       </div>
       <div className="heading-content">
         <h2 className="heading-title">Biggest transactions of the month</h2>
-        <button className="heading-btn">
+        {/* <Link className="heading-btn" to={<AllCurrencies />}>
           See all
           <MdArrowForwardIos />
-        </button>
+        </Link> */}
       </div>
       <div className="transaction-section">
         <div className="transaction-header">
@@ -84,6 +103,7 @@ const Wrapper = styled.section`
     color: #fff;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   .transaction-section {
     flex: 1;

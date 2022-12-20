@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import { showLoading } from "../features/allCrypto/allCryptoSlice";
 
-const NFT = ({ title, url, price, owner, ownerImg }) => {
+const NFT = ({ title, url, owner, price }) => {
+  const dispatch = useDispatch();
+
   return (
     <Wrapper className="basic-container">
       <img src={url} alt={title} className="nftImg" />

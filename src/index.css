@@ -10,11 +10,14 @@
    /* colors */
    --main-bck: #0d0f1c;
    --dashboard-bck: #292a34;
+   --white: #fff;
    --btn-color: linear-gradient(108.49deg, #AF53FF 0%, #6EACFE 95.17%);
    /* others */
    --border-radius-high: 25px;
    --border-radius-midd: 12px;
    --border-radius-low: 8px;
+
+   --border-color: #303241;
 
 }
 
@@ -29,7 +32,6 @@ body{
   background-size: cover;
   font-weight: 400;
   line-height: 1.6;
-
   /* min-height: 100vh; */
 }
 
@@ -39,13 +41,29 @@ body{
   justify-content: center;
   border: none;
   background: linear-gradient(108.49deg, #AF53FF 0%, #6EACFE 95.17%);
-  border-radius: 8px;
-  color: #fff;
+  border-radius: var(--border-radius-low);
+  color: var(--white);
   cursor: pointer;
 }
 
 .basic-container{
   background: linear-gradient(180deg, #171822 0%, #171822 100%);
-  border-radius: 12px;
-  border: 1px solid #303241;
+  border-radius: var(--border-radius-midd);
+  border: 1px solid var(--border-color);
+}
+
+/* Loading */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: var(--clr-primary-5);
+  animation: spinner 0.6s linear infinite;
 }

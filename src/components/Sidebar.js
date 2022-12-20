@@ -2,30 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import sidebarLinks from "../helpers/constants";
 import { Link } from "react-router-dom";
+import { RiHome5Fill } from "react-icons/ri";
 
 const Sidebar = () => {
   return (
-    // <Wrapper>
-    //   <div className="logo-container">
-    //     <span className="dot dot-rect"></span>
-    //     <div className="dot-container">
-    //       <span className="dot"></span>
-    //       <span className="dot"></span>
-    //     </div>
-    //   </div>
-    //   <div className="links-container">
-    //     {sidebarLinks.map((link) => {
-    //       return (
-    //         <div className="link-content" key={link.id}>
-    //           <span className="link-bar"></span>
-    //           <Link to={link.path} className="link">
-    //             {link.icon}
-    //           </Link>
-    //         </div>
-    //       );
-    //     })}
-    //   </div>
-    // </Wrapper>
     <Wrapper>
       <div className="logo-container">
         <span className="dot dot-rect"></span>
@@ -35,13 +15,19 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="links-container">
-        {sidebarLinks.map((link) => {
+        {/* {sidebarLinks.map((link) => {
           return (
             <Link to={link.path} className="link" key={link.id}>
               {link.icon}
             </Link>
           );
-        })}
+        })} */}
+        <Link to="/" className="link">
+          <RiHome5Fill fontSize="2rem" />
+        </Link>
+        <Link to="/currencies" className="link">
+          <RiHome5Fill fontSize="2rem" />
+        </Link>
       </div>
     </Wrapper>
   );
