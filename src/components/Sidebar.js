@@ -3,6 +3,7 @@ import styled from "styled-components";
 import sidebarLinks from "../helpers/constants";
 import { Link } from "react-router-dom";
 import { RiHome5Fill } from "react-icons/ri";
+import { GrTransaction } from "react-icons/gr";
 
 const Sidebar = () => {
   return (
@@ -25,8 +26,11 @@ const Sidebar = () => {
         <Link to="/" className="link">
           <RiHome5Fill fontSize="2rem" />
         </Link>
-        <Link to="/currencies" className="link">
-          <RiHome5Fill fontSize="2rem" />
+        <Link to="/nft" className="link link-nft">
+          NFT
+        </Link>
+        <Link to="transactions" className="link link-trans">
+          <GrTransaction fontSize="2rem" />
         </Link>
       </div>
     </Wrapper>
@@ -93,6 +97,9 @@ const Wrapper = styled.aside`
   }
   .link:hover::before {
     transform: scaleY(1);
+  }
+  .link-nft {
+    text-decoration: none;
   }
 `;
 

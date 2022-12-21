@@ -17,10 +17,10 @@ const MainDashboard = () => {
   useEffect(() => {
     dispatch(getCryptoCurrencies());
   }, []);
-  // // Fetching nfts
-  // useEffect(() => {
-  //   dispatch(getNFT());
-  // }, []);
+  // Fetching nfts
+  useEffect(() => {
+    dispatch(getNFT());
+  }, []);
 
   return (
     <Wrapper>
@@ -35,22 +35,22 @@ const MainDashboard = () => {
       </div>
       <div className="heading-content">
         <h2 className="heading-title">Top NFT this month</h2>
-        <button className="heading-btn">
+        <Link to="/nft" className="heading-btn">
           See all
           <MdArrowForwardIos />
-        </button>
+        </Link>
       </div>
       <div className="NFT-container">
-        {NFTList.map((item) => {
+        {nftList.slice(61, 65).map((item) => {
           return <NFT key={item.id} {...item} />;
         })}
       </div>
       <div className="heading-content">
         <h2 className="heading-title">Biggest transactions of the month</h2>
-        {/* <Link className="heading-btn" to={<AllCurrencies />}>
+        <Link to="transactions" className="heading-btn">
           See all
           <MdArrowForwardIos />
-        </Link> */}
+        </Link>
       </div>
       <div className="transaction-section">
         <div className="transaction-header">

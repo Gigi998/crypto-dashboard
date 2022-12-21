@@ -11,7 +11,7 @@ import TransRatio from "./TransRatio";
 import InOut from "./InOut";
 import ExchangeSelect from "./ExchangeSelect";
 import Loading from "./Loading";
-
+import SingleNFT from "./SingleNFT";
 export {
   Sidebar,
   Dashboard,
@@ -26,4 +26,5 @@ export {
   InOut,
   ExchangeSelect,
   Loading,
+  SingleNFT,
 };

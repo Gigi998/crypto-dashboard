@@ -52,6 +52,16 @@ body{
   border: 1px solid var(--border-color);
 }
 
+.basic-page{
+  background-color: #292a34;
+    max-width: 140rem;
+    border-radius: 25px;
+    border: 20px solid #292a34;
+    min-height: 50rem;
+    margin: 5rem auto;
+    display: flex;
+}
+
 /* Loading */
 @keyframes spinner {
   to {

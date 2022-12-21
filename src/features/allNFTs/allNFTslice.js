@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const API_NFT = "DL6zzl3l5DxDmdcyO9wiDR8RPw3hHDuF";
 const NFT_ENDPOINT =
-  "https://api.blockspan.com/v1/nfts?chain=eth-main&page_size=100";
+  "https://api.blockspan.com/v1/nfts?chain=eth-main&page_size=20";
 
 const initialState = {
   nftList: [],

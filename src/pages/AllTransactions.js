@@ -1,16 +1,15 @@
 import React from "react";
-import { Sidebar, Dashboard } from "../components";
 import styled from "styled-components";
-
-const Home = () => {
+import { Link } from "react-router-dom";
+const AllTransactions = () => {
   return (
     <Wrapper className="basic-page">
-      <Sidebar />
-      <Dashboard />
+      <h1>All trans</h1>
+      <Link to="/">back to home</Link>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.main``;
 
-export default Home;
+export default AllTransactions;
