@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import sidebarLinks from "../helpers/constants";
 import { Link } from "react-router-dom";
 import { RiHome5Fill } from "react-icons/ri";
-import { GrTransaction } from "react-icons/gr";
+import { BsCurrencyBitcoin } from "react-icons/bs";
 
 const Sidebar = () => {
   return (
@@ -16,21 +15,14 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="links-container">
-        {/* {sidebarLinks.map((link) => {
-          return (
-            <Link to={link.path} className="link" key={link.id}>
-              {link.icon}
-            </Link>
-          );
-        })} */}
         <Link to="/" className="link">
           <RiHome5Fill fontSize="2rem" />
         </Link>
-        <Link to="/nft" className="link link-nft">
-          NFT
+        <Link to="/crypto" className="link">
+          <BsCurrencyBitcoin fontSize="2rem" />
         </Link>
-        <Link to="transactions" className="link link-trans">
-          <GrTransaction fontSize="2rem" />
+        <Link to="/nft" className="link">
+          NFT
         </Link>
       </div>
     </Wrapper>
@@ -83,6 +75,7 @@ const Wrapper = styled.aside`
     align-items: center;
     padding: 0.5rem;
     color: #bdc0c9;
+    text-decoration: none;
   }
   .link::before {
     content: "";
@@ -97,9 +90,6 @@ const Wrapper = styled.aside`
   }
   .link:hover::before {
     transform: scaleY(1);
-  }
-  .link-nft {
-    text-decoration: none;
   }
 `;
 

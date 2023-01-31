@@ -1,5 +1,5 @@
 import Home from "./Home";
 import AllNFT from "./AllNFT";
-import AllTransactions from "./AllTransactions";
+import AllCrypto from "./AllCrypto";
 import Error from "./Error";
-export { Home, AllNFT, AllTransactions, Error };
+export { Home, AllNFT, AllCrypto, Error };

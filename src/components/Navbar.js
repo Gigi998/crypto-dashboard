@@ -1,18 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 import { BsHeart, BsBell, BsSearch } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  handleChange,
+  getCryptoName,
+} from "../features/allCrypto/allCryptoSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { isLoading, search } = useSelector((store) => store.allCrypto);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getCryptoName(search));
   };
+
+  const handleSearch = (e) => {
+    dispatch(handleChange({ name: e.target.name, value: e.target.value }));
+  };
+
   return (
     <Wrapper>
       <form className="search-field basic-container" onSubmit={handleSubmit}>
         <button className="single-icon search">
           <BsSearch />
         </button>
-        <input type="text" placeholder="Search market" className="input" />
+        <input
+          type="text"
+          placeholder="Search market"
+          className="input"
+          onChange={handleSearch}
+          value={search}
+        />
       </form>
       <div className="icon-container basic-container">
         <BsHeart className="single-icon" />

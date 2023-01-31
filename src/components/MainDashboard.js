@@ -13,6 +13,7 @@ const MainDashboard = () => {
   const dispatch = useDispatch();
   const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
   const { nftList } = useSelector((store) => store.allNFT);
+
   // Fetching currencies
   useEffect(() => {
     dispatch(getCryptoCurrencies());
@@ -35,19 +36,19 @@ const MainDashboard = () => {
       </div>
       <div className="heading-content">
         <h2 className="heading-title">Top NFT this month</h2>
-        <Link to="/nft" className="heading-btn">
+        <Link to="crypto" className="heading-btn">
           See all
           <MdArrowForwardIos />
         </Link>
       </div>
       <div className="NFT-container">
-        {nftList.slice(61, 65).map((item) => {
+        {NFTList.map((item) => {
           return <NFT key={item.id} {...item} />;
         })}
       </div>
       <div className="heading-content">
         <h2 className="heading-title">Biggest transactions of the month</h2>
-        <Link to="transactions" className="heading-btn">
+        <Link to="nft" className="heading-btn">
           See all
           <MdArrowForwardIos />
         </Link>
@@ -104,6 +105,7 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
   }
   .transaction-section {
     flex: 1;
