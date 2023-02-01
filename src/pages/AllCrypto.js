@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { Loading, Crypto } from "../components";
-
+import { getCryptoCurrencies } from "../features/allCrypto/allCryptoSlice";
 const AllCrypto = () => {
   const dispatch = useDispatch();
   const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
 
+  // Fetching currencies
+  useEffect(() => {
+    dispatch(getCryptoCurrencies());
+  }, []);
+
   return (
     <Wrapper>
       <h3 className="header">Crypto list</h3>
-      <div className="crypto-container">
-        {isLoading ? (
-          <Loading />
-        ) : (
-          currenciesList.map((item) => {
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="crypto-container">
+          {currenciesList.map((item) => {
             return <Crypto key={item.rank} {...item} />;
-          })
-        )}
-      </div>
+          })}
+        </div>
+      )}
       <Link to="/" className="back-btn">
         back to home
       </Link>

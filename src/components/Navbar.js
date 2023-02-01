@@ -5,15 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   handleChange,
   getCryptoName,
-} from "../features/allCrypto/allCryptoSlice";
+  clearSearch,
+} from "../features/singleCrypto/singleCryptoSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { isLoading, search } = useSelector((store) => store.allCrypto);
+  const { isLoading, search } = useSelector((store) => store.singleCrypto);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getCryptoName(search));
+    dispatch(clearSearch());
   };
 
   const handleSearch = (e) => {
