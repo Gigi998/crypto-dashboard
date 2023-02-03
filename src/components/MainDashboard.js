@@ -5,7 +5,6 @@ import { TransactionsList } from "../helpers/constants";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { getCryptoCurrencies } from "../features/allCrypto/allCryptoSlice";
-import { getNFT } from "../features/allNFTs/allNFTslice";
 import { NFTList } from "../helpers/constants";
 import { Link } from "react-router-dom";
 
@@ -17,10 +16,6 @@ const MainDashboard = () => {
   // Fetching currencies
   useEffect(() => {
     dispatch(getCryptoCurrencies());
-  }, []);
-  // Fetching nfts
-  useEffect(() => {
-    dispatch(getNFT());
   }, []);
 
   return (

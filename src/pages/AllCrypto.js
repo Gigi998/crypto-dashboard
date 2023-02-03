@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { Loading, Crypto } from "../components";
 import { getCryptoCurrencies } from "../features/allCrypto/allCryptoSlice";
+
 const AllCrypto = () => {
   const dispatch = useDispatch();
   const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
