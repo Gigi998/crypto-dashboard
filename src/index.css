@@ -62,6 +62,19 @@ body{
     display: flex;
 }
 
+.header-list{
+  font-size: 3rem;
+  color: #fff;
+}
+
+.list-home-btn{
+  text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-top: 1rem;
+}
+
 /* Loading */
 @keyframes spinner {
   to {

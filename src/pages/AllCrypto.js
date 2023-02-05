@@ -16,7 +16,10 @@ const AllCrypto = () => {
 
   return (
     <Wrapper>
-      <h3 className="header">Crypto list</h3>
+      <h3 className="header-list">Crypto list</h3>
+      <Link to="/" className="list-home-btn">
+        Back Home
+      </Link>
       {isLoading ? (
         <Loading />
       ) : (
@@ -26,9 +29,6 @@ const AllCrypto = () => {
           })}
         </div>
       )}
-      <Link to="/" className="back-btn">
-        back to home
-      </Link>
     </Wrapper>
   );
 };
@@ -43,9 +43,6 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .header {
-    font-size: 2rem;
-  }
   .crypto-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -60,13 +57,6 @@ const Wrapper = styled.main`
     .crypto-container {
       grid-template-columns: repeat(3, 1fr);
     }
-  }
-  .back-btn {
-    text-decoration: none;
-    color: black;
-    font-size: 2rem;
-    text-transform: capitalize;
-    margin-top: 1rem;
   }
 `;
 

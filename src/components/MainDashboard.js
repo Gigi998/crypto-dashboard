@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 const MainDashboard = () => {
   const dispatch = useDispatch();
   const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
-  const { nftList } = useSelector((store) => store.allNFT);
   const { singleCurrency } = useSelector((store) => store.singleCrypto);
   // Fetching currencies
   useEffect(() => {
@@ -63,6 +62,7 @@ const MainDashboard = () => {
               <p className="transaction-buy">Buy/Sell</p>
               <p>Date</p>
             </div>
+            {/* Hard coded*/}
             {TransactionsList.map((trans) => {
               return <Transaction key={trans.id} {...trans} />;
             })}
