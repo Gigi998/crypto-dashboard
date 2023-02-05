@@ -6,11 +6,11 @@ import {
   handleChange,
   getCryptoName,
   clearSearch,
-} from "../features/singleCrypto/singleCryptoSlice";
+} from "../features/allCrypto/allCryptoSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { isLoading, search } = useSelector((store) => store.singleCrypto);
+  const { isLoading, search } = useSelector((store) => store.allCrypto);
 
   const handleSubmit = (e) => {
     e.preventDefault();

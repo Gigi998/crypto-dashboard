@@ -10,8 +10,10 @@ import { Link } from "react-router-dom";
 
 const MainDashboard = () => {
   const dispatch = useDispatch();
-  const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
-  const { singleCurrency } = useSelector((store) => store.singleCrypto);
+  const { currenciesList, isLoading, singleCurrency } = useSelector(
+    (store) => store.allCrypto
+  );
+
   // Fetching currencies
   useEffect(() => {
     dispatch(getCryptoCurrencies());

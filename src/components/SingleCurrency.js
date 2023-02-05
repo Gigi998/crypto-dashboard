@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import { clearCurrency } from "../features/singleCrypto/singleCryptoSlice";
+import { useDispatch } from "react-redux";
+import { clearCurrency } from "../features/allCrypto/allCryptoSlice";
 const SingleCurrency = ({
   name,
   symbol,
