@@ -7,6 +7,7 @@ const initialState = {
   currenciesList: [],
   search: "",
   singleCurrency: "",
+  favoritesList: [],
 };
 
 export const getCryptoCurrencies = createAsyncThunk(
@@ -39,7 +40,7 @@ const allCryptoSlice = createSlice({
       state.isLoading = false;
     },
     //Search form handle change
-    handleChange: (state, { payload: { name, value } }) => {
+    handleChange: (state, { payload: { value } }) => {
       state.search = value;
     },
     clearSearch: (state) => {
@@ -47,6 +48,9 @@ const allCryptoSlice = createSlice({
     },
     clearCurrency: (state) => {
       state.singleCurrency = "";
+    },
+    addToFavorites: (state, { payload: { singleCurrency } }) => {
+      state.favoritesList = [...state.favoritesList, singleCurrency];
     },
   },
   extraReducers: {
@@ -79,5 +83,6 @@ export const {
   handleChange,
   clearCurrency,
   clearSearch,
+  addToFavorites,
 } = allCryptoSlice.actions;
 export default allCryptoSlice.reducer;

@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   const handleSearch = (e) => {
-    dispatch(handleChange({ name: e.target.name, value: e.target.value }));
+    dispatch(handleChange({ value: e.target.value }));
   };
 
   return (

@@ -25,7 +25,7 @@ const MainDashboard = () => {
         <SingleCurrency {...singleCurrency} />
       ) : (
         <div>
-          <div className="crypto-container">
+          <div className="crypto-container-main">
             {isLoading ? (
               <Loading />
             ) : (
@@ -80,7 +80,7 @@ const Wrapper = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
-  .crypto-container {
+  .crypto-container-main {
     display: flex;
     align-items: center;
     justify-content: space-between;

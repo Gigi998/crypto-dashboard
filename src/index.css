@@ -75,6 +75,14 @@ body{
     margin-top: 1rem;
 }
 
+.crypto-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #a6a9b3;
+}
+
 /* Loading */
 @keyframes spinner {
   to {

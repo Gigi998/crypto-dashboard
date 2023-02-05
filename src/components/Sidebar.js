@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { RiHome5Fill } from "react-icons/ri";
 import { BsCurrencyBitcoin } from "react-icons/bs";
+import { MdOutlineCollectionsBookmark } from "react-icons/md";
 
 const Sidebar = () => {
   return (
@@ -23,6 +24,9 @@ const Sidebar = () => {
         </Link>
         <Link to="/nft" className="link">
           NFT
+        </Link>
+        <Link to="/favorites" className="link">
+          <MdOutlineCollectionsBookmark fontSize="2rem" />
         </Link>
       </div>
     </Wrapper>
