@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BsHeart, BsBell, BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import {
   handleChange,
   getCryptoName,
@@ -9,12 +10,14 @@ import {
 } from "../features/allCrypto/allCryptoSlice";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isLoading, search } = useSelector((store) => store.allCrypto);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getCryptoName(search));
+    navigate("/singleCrypto");
     dispatch(clearSearch());
   };
 
@@ -25,9 +28,9 @@ const Navbar = () => {
   return (
     <Wrapper>
       <form className="search-field basic-container" onSubmit={handleSubmit}>
-        <button className="single-icon search">
+        <Link to="singleCrypto" className="single-icon search">
           <BsSearch />
-        </button>
+        </Link>
         <input
           type="text"
           placeholder="Search market"
@@ -80,6 +83,7 @@ const Wrapper = styled.nav`
     background-color: transparent;
     border: none;
     font-size: 1.7rem;
+    margin-top: 0.5rem;
   }
   .search {
     margin-left: 1rem;

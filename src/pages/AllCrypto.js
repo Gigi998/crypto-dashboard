@@ -17,7 +17,7 @@ const AllCrypto = () => {
   return (
     <Wrapper>
       <h3 className="header-list">Crypto list</h3>
-      <Link to="/" className="list-home-btn">
+      <Link to="/" className="home-btn">
         Back Home
       </Link>
       {isLoading ? (

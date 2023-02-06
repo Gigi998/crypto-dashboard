@@ -12,7 +12,7 @@ import InOut from "./InOut";
 import ExchangeSelect from "./ExchangeSelect";
 import Loading from "./Loading";
 import SingleNFT from "./SingleNFT";
-import SingleCurrency from "./SingleCurrency";
+import NoCryptoFound from "./NoCryptoFound";
 export {
   Sidebar,
   Dashboard,
@@ -28,5 +28,5 @@ export {
   ExchangeSelect,
   Loading,
   SingleNFT,
-  SingleCurrency,
+  NoCryptoFound,
 };

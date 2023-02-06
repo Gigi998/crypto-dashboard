@@ -29,7 +29,7 @@ const AllNFT = () => {
   return (
     <Wrapper className="basic-page">
       <h1 className="header-list">NFTs list</h1>
-      <Link to="/" className="list-home-btn">
+      <Link to="/" className="home-btn">
         back home
       </Link>
       {loading && nftList.length === 0 ? (

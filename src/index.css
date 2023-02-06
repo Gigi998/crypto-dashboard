@@ -67,12 +67,12 @@ body{
   color: #fff;
 }
 
-.list-home-btn{
+.home-btn{
   text-decoration: none;
-    color: #fff;
-    font-size: 2rem;
-    text-transform: capitalize;
-    margin-top: 1rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
+  color: #fff;
 }
 
 .crypto-container {

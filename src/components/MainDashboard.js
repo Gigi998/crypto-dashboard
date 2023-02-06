@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Crypto, NFT, Transaction, Loading, SingleCurrency } from "./";
+import { Crypto, NFT, Transaction, Loading } from "./";
 import styled from "styled-components";
 import { TransactionsList } from "../helpers/constants";
 import { MdArrowForwardIos } from "react-icons/md";
@@ -10,9 +10,7 @@ import { Link } from "react-router-dom";
 
 const MainDashboard = () => {
   const dispatch = useDispatch();
-  const { currenciesList, isLoading, singleCurrency } = useSelector(
-    (store) => store.allCrypto
-  );
+  const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
 
   // Fetching currencies
   useEffect(() => {
@@ -21,56 +19,52 @@ const MainDashboard = () => {
 
   return (
     <Wrapper>
-      {singleCurrency ? (
-        <SingleCurrency {...singleCurrency} />
-      ) : (
-        <div>
-          <div className="crypto-container-main">
-            {isLoading ? (
-              <Loading />
-            ) : (
-              currenciesList.slice(0, 4).map((item) => {
-                return <Crypto key={item.rank} {...item} />;
-              })
-            )}
-          </div>
-          <div className="heading-content">
-            <h2 className="heading-title">Top NFT this month</h2>
-            <Link to="crypto" className="heading-btn">
-              See all
-              <MdArrowForwardIos />
-            </Link>
-          </div>
-          <div className="NFT-container">
-            {NFTList.map((item) => {
-              return <NFT key={item.id} {...item} />;
-            })}
-          </div>
-          <div className="heading-content">
-            <h2 className="heading-title">Biggest transactions of the month</h2>
-            <Link to="nft" className="heading-btn">
-              See all
-              <MdArrowForwardIos />
-            </Link>
-          </div>
-          <div className="transaction-section">
-            <div className="transaction-header">
-              <p></p>
-              <p>From</p>
-              <p>To</p>
-              <p>Currency</p>
-              <p className="transaction-price">Price</p>
-              <p className="transaction-amount">Amount</p>
-              <p className="transaction-buy">Buy/Sell</p>
-              <p>Date</p>
-            </div>
-            {/* Hard coded*/}
-            {TransactionsList.map((trans) => {
-              return <Transaction key={trans.id} {...trans} />;
-            })}
-          </div>
+      <div>
+        <div className="crypto-container-main">
+          {isLoading ? (
+            <Loading />
+          ) : (
+            currenciesList.slice(0, 4).map((item) => {
+              return <Crypto key={item.rank} {...item} />;
+            })
+          )}
         </div>
-      )}
+        <div className="heading-content">
+          <h2 className="heading-title">Top NFT this month</h2>
+          <Link to="crypto" className="heading-btn">
+            See all
+            <MdArrowForwardIos />
+          </Link>
+        </div>
+        <div className="NFT-container">
+          {NFTList.map((item) => {
+            return <NFT key={item.id} {...item} />;
+          })}
+        </div>
+        <div className="heading-content">
+          <h2 className="heading-title">Biggest transactions of the month</h2>
+          <Link to="nft" className="heading-btn">
+            See all
+            <MdArrowForwardIos />
+          </Link>
+        </div>
+        <div className="transaction-section">
+          <div className="transaction-header">
+            <p></p>
+            <p>From</p>
+            <p>To</p>
+            <p>Currency</p>
+            <p className="transaction-price">Price</p>
+            <p className="transaction-amount">Amount</p>
+            <p className="transaction-buy">Buy/Sell</p>
+            <p>Date</p>
+          </div>
+          {/* Hard coded*/}
+          {TransactionsList.map((trans) => {
+            return <Transaction key={trans.id} {...trans} />;
+          })}
+        </div>
+      </div>
     </Wrapper>
   );
 };

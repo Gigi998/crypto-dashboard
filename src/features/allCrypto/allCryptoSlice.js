@@ -7,6 +7,7 @@ const initialState = {
   currenciesList: [],
   search: "",
   singleCurrency: "",
+  isLoadingSingle: false,
   favoritesList: [],
 };
 
@@ -65,14 +66,14 @@ const allCryptoSlice = createSlice({
       state.isLoading = false;
     },
     [getCryptoName.pending]: (state) => {
-      state.isLoading = true;
+      state.isLoadingSingle = true;
     },
     [getCryptoName.fulfilled]: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingSingle = false;
       state.singleCurrency = action.payload.data;
     },
     [getCryptoName.rejected]: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingSingle = false;
     },
   },
 });

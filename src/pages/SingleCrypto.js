@@ -5,16 +5,12 @@ import {
   clearCurrency,
   addToFavorites,
 } from "../features/allCrypto/allCryptoSlice";
-const SingleCurrency = ({
-  name,
-  symbol,
-  supply,
-  marketCapUsd,
-  priceUsd: price,
-  changePercent24Hr: change,
-}) => {
+import { Link } from "react-router-dom";
+import { Loading, NoCryptoFound } from "../components";
+
+const SingleCrypto = () => {
   const dispatch = useDispatch();
-  const { singleCurrency, favoritesList } = useSelector(
+  const { singleCurrency, favoritesList, isLoadingSingle } = useSelector(
     (store) => store.allCrypto
   );
 
@@ -32,24 +28,50 @@ const SingleCurrency = ({
     }
   };
 
+  if (isLoadingSingle) {
+    return (
+      <div className="basic-page">
+        <Loading />;
+      </div>
+    );
+  }
+
+  if (!singleCurrency) {
+    return (
+      <div className="basic-page">
+        <NoCryptoFound />;
+      </div>
+    );
+  }
+
+  const {
+    name,
+    symbol,
+    supply,
+    priceUsd: price,
+    changePercent24Hr: change,
+  } = singleCurrency;
+
   return (
-    <Wrapper>
+    <Wrapper className="basic-page">
+      <h1 className="header-list">Single Crypto</h1>
       <div className="basic-container crypto-container">
         <h2>Name: {name}</h2>
         <h2>Symbol: {symbol}</h2>
         <h2>Supply:{parseInt(supply, 10)} </h2>
         <h2>Price: ${parseInt(price, 10)}</h2>
-        <h2>Change24Hr: {change}%</h2>
+        <h2>Change24Hr: {parseInt(change, 10)}%</h2>
         <button className="btn btn-add" onClick={() => handleClick()}>
           Add to favorites
         </button>
       </div>
-      <button
-        className="btn btn-back"
+      <Link
+        to="/"
+        className="home-btn"
         onClick={() => dispatch(clearCurrency())}
       >
-        Clear
-      </button>
+        Back home
+      </Link>
     </Wrapper>
   );
 };
@@ -57,16 +79,10 @@ const SingleCurrency = ({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  .btn-back {
-    width: 10rem;
-    margin: auto;
-    margin-top: 2rem;
-    height: 2rem;
-  }
   .btn-add {
     width: 12rem;
     height: 2rem;
   }
 `;
 
-export default SingleCurrency;
+export default SingleCrypto;

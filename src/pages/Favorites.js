@@ -9,14 +9,14 @@ const Favorites = () => {
   return (
     <Wrapper className="basic-page">
       <h1 className="header-list">Favorites</h1>
-      <Link to="/" className="list-home-btn">
+      <Link to="/" className="home-btn">
         back home
       </Link>{" "}
       <div>
         {favoritesList.map((item) => {
-          const { name, symbol, supply, price, change } = item;
+          const { name, symbol, supply, price, change, id } = item;
           return (
-            <div className="basic-container crypto-container">
+            <div className="basic-container crypto-container" key={item.id}>
               <h2>Name: {name}</h2>
               <h2>Symbol: {symbol}</h2>
               <h2>Supply:{parseInt(supply, 10)} </h2>
