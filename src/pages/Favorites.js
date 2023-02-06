@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+import { removeFromFavorites } from "../features/allCrypto/allCryptoSlice";
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,14 @@ const Favorites = () => {
       </Link>{" "}
       <div>
         {favoritesList.map((item) => {
-          const { name, symbol, supply, price, change, id } = item;
+          const {
+            name,
+            symbol,
+            supply,
+            priceUsd: price,
+            changePercent24Hr: change,
+            id,
+          } = item;
           return (
             <div className="basic-container crypto-container" key={item.id}>
               <h2>Name: {name}</h2>
@@ -22,7 +30,12 @@ const Favorites = () => {
               <h2>Supply:{parseInt(supply, 10)} </h2>
               <h2>Price: ${parseInt(price, 10)}</h2>
               <h2>Change24Hr: {change}%</h2>
-              <button className="btn">Remove</button>
+              <button
+                className="btn btn-remove"
+                onClick={() => dispatch(removeFromFavorites({ id }))}
+              >
+                Remove
+              </button>
             </div>
           );
         })}
@@ -35,6 +48,10 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  .btn-remove {
+    width: 7rem;
+    height: 2rem;
+  }
 `;
 
 export default Favorites;

@@ -53,6 +53,11 @@ const allCryptoSlice = createSlice({
     addToFavorites: (state, { payload: { singleCurrency } }) => {
       state.favoritesList = [...state.favoritesList, singleCurrency];
     },
+    removeFromFavorites: (state, { payload }) => {
+      state.favoritesList = state.favoritesList.filter(
+        (item) => item.id !== payload.id
+      );
+    },
   },
   extraReducers: {
     [getCryptoCurrencies.pending]: (state) => {
@@ -85,5 +90,6 @@ export const {
   clearCurrency,
   clearSearch,
   addToFavorites,
+  removeFromFavorites,
 } = allCryptoSlice.actions;
 export default allCryptoSlice.reducer;

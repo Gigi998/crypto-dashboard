@@ -104,7 +104,7 @@ const Wrapper = styled.nav`
     position: absolute;
     width: 0.6rem;
     height: 0.6rem;
-    top: 1.3rem;
+    top: 1.4rem;
     left: 2.5rem;
     border-radius: 50%;
   }
