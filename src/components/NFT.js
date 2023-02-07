@@ -6,12 +6,14 @@ import { showLoading } from "../features/allCrypto/allCryptoSlice";
 const NFT = ({ title, url, owner, price }) => {
   const dispatch = useDispatch();
 
+  const handleClick = (e) => {
+    console.log(e.target.name);
+  };
+
   return (
     <Wrapper className="basic-container">
       <img src={url} alt={title} className="nftImg" />
       <h4 className="owner">{owner}</h4>
-      {/* <img src={ownerImg} alt="img" className="ownerImg" /> */}
-
       <h3 className="nft-title">{title}</h3>
       <div className="bottom-container">
         <div className="price">
@@ -49,7 +51,7 @@ const Wrapper = styled.div`
     margin-right: auto;
   }
   .btn-bidded {
-    width: 6rem;
+    width: 8rem;
   }
 `;
 

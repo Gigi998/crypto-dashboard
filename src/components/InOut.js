@@ -12,13 +12,17 @@ const InOut = () => {
       <p className="subtitle">Based on your performance</p>
       <BsGraphUp fontSize="10rem" color="#fff" />
       <div className="check-squares">
-        <div className="check">
-          <input type="checkbox" id="income" onChange={handleChange} checked />
-          <label htmlFor="income">Income</label>
+        <div>
+          <input type="checkbox" id="income" onChange={handleChange} />
+          <label htmlFor="income" className="check">
+            Income
+          </label>
         </div>
-        <div className="check">
-          <input type="checkbox" id="outcome" onChange={handleChange} checked />
-          <label htmlFor="outcome">Outcome</label>
+        <div>
+          <input type="checkbox" id="outcome" onChange={handleChange} />
+          <label htmlFor="outcome" className="check">
+            Outcome
+          </label>
         </div>
       </div>
     </Wrapper>
@@ -33,8 +37,12 @@ const Wrapper = styled.div`
   justify-content: space-around;
   .check-squares {
     display: flex;
+    gap: 1rem;
     .check-out {
       margin-left: 2rem;
+    }
+    .check {
+      margin-left: 0.3rem;
     }
   }
   .title {

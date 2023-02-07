@@ -99,7 +99,7 @@ export const NFTList = [
   },
   {
     id: 4,
-    title: "World of WOmen",
+    title: "World of Women",
     price: 3404,
     url: worldOfWomen,
     owner: "Ape ape",
