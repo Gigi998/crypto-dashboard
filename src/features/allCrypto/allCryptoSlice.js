@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { getFromLocStor } from "../../helpers/localStorage";
 
 const CRYPTO_ENDPOINT = "https://api.coincap.io/v2/assets";
 
@@ -8,7 +9,7 @@ const initialState = {
   search: "",
   singleCurrency: "",
   isLoadingSingle: false,
-  favoritesList: [],
+  favoritesList: getFromLocStor(),
 };
 
 export const getCryptoCurrencies = createAsyncThunk(

@@ -7,15 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCryptoCurrencies } from "../features/allCrypto/allCryptoSlice";
 import { NFTList } from "../helpers/constants";
 import { Link } from "react-router-dom";
-
+import { saveFavoritesToLocStor } from "../helpers/localStorage";
 const MainDashboard = () => {
   const dispatch = useDispatch();
-  const { currenciesList, isLoading } = useSelector((store) => store.allCrypto);
+  const { currenciesList, isLoading, favoritesList } = useSelector(
+    (store) => store.allCrypto
+  );
 
   // Fetching currencies
   useEffect(() => {
     dispatch(getCryptoCurrencies());
   }, []);
+
+  useEffect(() => {
+    saveFavoritesToLocStor(favoritesList);
+  }, [favoritesList]);
 
   return (
     <Wrapper>

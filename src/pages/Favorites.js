@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromFavorites } from "../features/allCrypto/allCryptoSlice";
+import { saveFavoritesToLocStor } from "../helpers/localStorage";
 
 const Favorites = () => {
   const dispatch = useDispatch();
   const { favoritesList } = useSelector((store) => store.allCrypto);
+
+  useEffect(() => {
+    saveFavoritesToLocStor(favoritesList);
+  }, [favoritesList]);
+
   return (
     <Wrapper className="basic-page">
       <h1 className="header-list">Favorites</h1>

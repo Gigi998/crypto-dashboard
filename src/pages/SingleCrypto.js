@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearCurrency,
   addToFavorites,
+  removeFromFavorites,
 } from "../features/allCrypto/allCryptoSlice";
 import { Link } from "react-router-dom";
 import { Loading, NoCryptoFound } from "../components";
+import { saveFavoritesToLocStor } from "../helpers/localStorage";
 
 const SingleCrypto = () => {
   const dispatch = useDispatch();
   const { singleCurrency, favoritesList, isLoadingSingle } = useSelector(
     (store) => store.allCrypto
   );
+
+  useEffect(() => {
+    saveFavoritesToLocStor(favoritesList);
+  }, [favoritesList]);
 
   const handleClick = () => {
     if (favoritesList.length === 0) {
