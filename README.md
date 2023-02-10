@@ -24,6 +24,8 @@ I also implemented styled-componets
 
 Check their docs => https://styled-components.com/
 
+#### LOCAL STORAGE
+
 #### REACT-ROUTER
 
 Docs => https://reactrouter.com/en/main
